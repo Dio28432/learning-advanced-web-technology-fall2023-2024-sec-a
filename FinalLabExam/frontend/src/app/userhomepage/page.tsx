@@ -1,4 +1,4 @@
-// pages/index.tsx
+
 "use client"
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -19,7 +19,7 @@ const HomePage = () => {
     const [cart, setCart] = useState<CartItem[]>([]);
 
     useEffect(() => {
-        // Fetch products from the backend
+       
         axios.get<Product[]>('http://localhost:3001/product')
             .then(response => {
                 setProducts(response.data);
@@ -28,7 +28,7 @@ const HomePage = () => {
                 console.error('Error fetching products:', error);
             });
 
-        // Fetch cart items from the backend
+        
         axios.get<CartItem[]>('http://localhost:3001/cart')
             .then(response => {
                 setCart(response.data);
@@ -39,10 +39,10 @@ const HomePage = () => {
     }, []);
 
     const addToCart = (productId: number) => {
-        // Add product to cart
+      
         axios.post<CartItem[]>('http://localhost:3001/cart/add', { userId: 1, pid: productId })
             .then(response => {
-                // Update cart state
+              
                 setCart(response.data);
             })
             .catch(error => {
