@@ -22,8 +22,8 @@ const AdminPage = () => {
 
     const deleteProduct = async (productId: number) => {
         try {
-            await axios.delete(`http://localhost:3001/product/${productId}`); // Assuming your delete endpoint is '/api/product/:id'
-            fetchProducts(); // Refresh the product list after deletion
+            await axios.delete(`http://localhost:3001/product/${productId}`); 
+            fetchProducts(); 
         } catch (error) {
             console.error('Error deleting product:', error);
         }
