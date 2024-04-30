@@ -26,10 +26,10 @@ const Signup = () => {
             const response = await axios.post('http://localhost:3001/users/auth/register', formData);
 
             console.log('Signup successful:', response.data);
-            // Optionally redirect the user to another page or show a success message
+            
         } catch (error) {
             console.error('Error during signup:', error);
-            // Optionally show an error message to the user
+            
         }
     };
 
